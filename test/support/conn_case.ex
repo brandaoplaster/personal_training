@@ -17,6 +17,8 @@ defmodule PersonalTrainingWeb.ConnCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   using do
     quote do
       # Import conveniences for testing with connections
@@ -32,10 +34,10 @@ defmodule PersonalTrainingWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PersonalTraining.Repo)
+    :ok = Sandbox.checkout(PersonalTraining.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PersonalTraining.Repo, {:shared, self()})
+      Sandbox.mode(PersonalTraining.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
