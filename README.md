@@ -1,20 +1,48 @@
-# PersonalTraining
+# Personal Training :muscle:
 
-To start your Phoenix server:
+## Configuration database and Installing dependencies
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+```
+cp .env.example .env
+```
+
+```
+docker-compose up -d
+```
+
+```
+mix deps.get
+```
+
+```
+yarn install
+```
+
+```
+mix ecto.create
+```
+
+```
+mix ecto.migrate
+```
+
+```
+mix phx.server
+```
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Stack
+ - Elixir 1.12
+ - Phoenix 1.5.13
+ - Postgres 13
+ - Docker
+ - Docker compose
 
-## Learn more
+## Authors
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+- [brandaoplaster](https://github.com/brandaoplaster)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
