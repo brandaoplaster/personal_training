@@ -25,9 +25,10 @@ COPY lib lib
 
 RUN mix do compile, release
 
-FROM alpine:3.9 AS app
+FROM alpine:3.14 AS app
 
-RUN apk add --no-cache openssl ncurses-libs
+RUN apk upgrade --no-cache && \
+    apk add --no-cache openssl libgcc libstdc++ ncurses-libs
 
 WORKDIR /app
 
