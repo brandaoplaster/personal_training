@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/elixir,phoenix,visualstudiocode,node,yarn,sass
 # Edit at https://www.toptal.com/developers/gitignore?templates=elixir,phoenix,visualstudiocode,node,yarn,sass
 
+google-key.json
+
 ### Elixir ###
 /_build
 /cover
