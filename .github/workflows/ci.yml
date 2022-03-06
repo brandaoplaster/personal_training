@@ -80,7 +80,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
     services:
       pg:
-        image: postgres:12
+        image: postgres:13
         ports: ["5432:5432"]
         env:
           POSTGRES_PASSWORD: postgres
