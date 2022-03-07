@@ -45,4 +45,4 @@ deploy:
   provider: script
   script: bash ./run_deploy.sh #git update-index --add --chmod=+x deploy.sh
   on:
-    branch: master
+    branch: main
