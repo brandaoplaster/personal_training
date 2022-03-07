@@ -6,7 +6,7 @@ opt_release:
   - 24.0
 
 addons:
-  postgres: "13"
+  postgres: "9.4"
 
 services:
   - postgresql
