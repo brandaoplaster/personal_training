@@ -17,12 +17,15 @@ defmodule PersonalTrainingWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/teacher", TeacherController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PersonalTrainingWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", PersonalTrainingWeb do
+    pipe_through :api
+
+    resources "/teacher", TeacherController, except: [:new, :edit]
+  end
 
   # Enables LiveDashboard only for development
   #
