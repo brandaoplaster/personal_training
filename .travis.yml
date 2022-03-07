@@ -43,6 +43,6 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: bash ./deploy.sh #git update-index --add --chmod=+x deploy.sh
+  script: bash ./run_deploy.sh #git update-index --add --chmod=+x deploy.sh
   on:
     branch: master
