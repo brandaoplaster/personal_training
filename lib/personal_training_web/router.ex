@@ -10,14 +10,13 @@ defmodule PersonalTrainingWeb.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json", "xml"]
   end
 
   scope "/", PersonalTrainingWeb do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/teacher", TeacherController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
