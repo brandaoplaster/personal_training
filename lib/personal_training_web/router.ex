@@ -18,6 +18,7 @@ defmodule PersonalTrainingWeb.Router do
 
     get "/", PageController, :index
     resources "/teacher", TeacherController
+    resources "/member", MemberController
   end
 
   scope "/api", PersonalTrainingWeb.Api, as: :api do
