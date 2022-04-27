@@ -7,6 +7,7 @@ defmodule PersonalTraining.Members do
   alias PersonalTraining.Repo
 
   alias PersonalTraining.Members.Member
+  alias PersonalTraining.Teachers
 
   @doc """
   Returns the list of members.
@@ -50,7 +51,11 @@ defmodule PersonalTraining.Members do
 
   """
   def create_member(attrs \\ %{}) do
-    %Member{}
+    %{"teacher_id" => teacher_id} = attrs
+
+    teacher_id
+    |> Teachers.get_teacher!()
+    |> Ecto.build_assoc(:members)
     |> Member.changeset(attrs)
     |> Repo.insert()
   end
