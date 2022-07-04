@@ -21,6 +21,10 @@ defmodule PersonalTraining.Teachers do
     Repo.all(Teacher)
   end
 
+  def list_all do
+    Repo.all(from t in Teacher, select: {t.name, t.id})
+  end
+
   @doc """
   Gets a single teacher.
 

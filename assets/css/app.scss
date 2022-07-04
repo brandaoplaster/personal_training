@@ -1,5 +1,5 @@
 /* This file is for your main application css. */
-@import "./phoenix.css";
+@import "../node_modules/materialize-css/dist/css/materialize.min.css";
 
 /* Alerts and form errors */
 .alert {
@@ -33,4 +33,9 @@
   color: #a94442;
   display: block;
   margin: -1rem 0 2rem;
+}
+
+.padding-header-y {
+  padding-left: 16px;
+  padding-right: 8px;
 }
