@@ -17,6 +17,7 @@ defmodule PersonalTrainingWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/search", TeacherController, :search
     resources "/teacher", TeacherController
     resources "/member", MemberController
   end

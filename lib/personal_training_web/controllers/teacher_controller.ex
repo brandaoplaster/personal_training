@@ -62,4 +62,9 @@ defmodule PersonalTrainingWeb.TeacherController do
     |> put_flash(:info, "Teacher deleted successfully!")
     |> redirect(to: Routes.teacher_path(conn, :index))
   end
+
+  def search(conn, _params) do
+    teachers = Teachers.list_teacher()
+    render(conn, "index.html", teachers: teachers)
+  end
 end
