@@ -12,6 +12,5 @@ defmodule PersonalTraining.Repo.Migrations.CreateMembers do
 
       timestamps()
     end
-
   end
 end
