@@ -27,6 +27,7 @@ defmodule PersonalTraining.Teachers do
 
   def search_teacher(filter) do
     field = "%#{filter}%"
+
     from(t in Teacher)
     |> where([t], ilike(t.name, ^field))
     |> Repo.all()
