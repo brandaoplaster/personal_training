@@ -63,8 +63,8 @@ defmodule PersonalTrainingWeb.TeacherController do
     |> redirect(to: Routes.teacher_path(conn, :index))
   end
 
-  def search(conn, _params) do
-    teachers = Teachers.list_teacher()
+  def search(conn, %{"filter" => filter}) do
+    teachers = Teachers.search_teacher(filter)
     render(conn, "index.html", teachers: teachers)
   end
 end
