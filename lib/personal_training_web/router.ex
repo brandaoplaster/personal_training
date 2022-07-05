@@ -19,6 +19,7 @@ defmodule PersonalTrainingWeb.Router do
     get "/", PageController, :index
     get "/teacher/search", TeacherController, :search
     resources "/teacher", TeacherController
+    get "/member/search", MemberController, :search
     resources "/member", MemberController
   end
 

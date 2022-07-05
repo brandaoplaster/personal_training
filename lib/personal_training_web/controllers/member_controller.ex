@@ -64,4 +64,9 @@ defmodule PersonalTrainingWeb.MemberController do
     |> put_flash(:info, "Member deleted successfully.")
     |> redirect(to: Routes.member_path(conn, :index))
   end
+
+  def search(conn, %{"filter" => filter}) do
+    members = Members.search_member(filter)
+    render(conn, "index.html", members: members)
+  end
 end

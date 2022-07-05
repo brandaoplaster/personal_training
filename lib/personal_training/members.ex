@@ -22,6 +22,14 @@ defmodule PersonalTraining.Members do
     Repo.all(Member)
   end
 
+  def search_member(filter) do
+    field = "%#{filter}%"
+
+    from(m in Member)
+    |> where([m], ilike(m.name, ^field))
+    |> Repo.all()
+  end
+
   @doc """
   Gets a single member.
 
