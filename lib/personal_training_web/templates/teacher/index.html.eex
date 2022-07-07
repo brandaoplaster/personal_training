@@ -17,7 +17,8 @@
     <span class="title"><%= teacher.name %></span>
     <p><%= teacher.education_level %><br>
       <span class="badge blue white-text">
-        90 Alunos </span>
+        <%= PersonalTraining.Members.count_member_by_teacher(teacher.id) %> Alunos
+      </span>
     </p>
     <div class="secondary-content">
       <%= link  to: Routes.teacher_path(@conn, :show, teacher) do %>
