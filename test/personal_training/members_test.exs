@@ -7,6 +7,11 @@ defmodule PersonalTraining.MembersTest do
   describe "members" do
     alias PersonalTraining.Members.Member
 
+    test "count_member_by_teacher/1 using filters" do
+      member = member_fixture()
+      assert Members.count_member_by_teacher(member.teacher_id) == 1
+    end
+
     test "list_members/0 returns all members" do
       member = member_fixture()
       assert Members.list_members() == [member]
