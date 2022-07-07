@@ -46,6 +46,13 @@ defmodule PersonalTraining.Members do
   """
   def get_member!(id), do: Repo.get!(Member, id)
 
+  def count_member_by_teacher(teacher_id) do
+    from(m in Member)
+    |> where([m], m.teacher_id == ^teacher_id)
+    |> select([m], count("*"))
+    |> Repo.one()
+  end
+
   @doc """
   Creates a member.
 
