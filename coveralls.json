@@ -1,0 +1,18 @@
+{
+  "skip_files": [
+    "lib/personal_training/application.ex",
+    "lib/personal_training/release.ex",
+    "lib/personal_training/telemetry.ex",
+    "lib/personal_training_web.ex",
+    "lib/personal_training_web/telemetry.ex",
+    "lib/personal_training_web/channels/user_socket.ex",
+    "lib/personal_training/views/error_helpers.ex",
+    "test/support/channel_case.ex",
+    "test/support/data_case.ex"
+  ],
+  "coverage_options": {
+    "treat_no_relevant_lines_as_covered": true,
+    "output_dir": "cover/",
+    "minimum_coverage": 75
+  }
+}

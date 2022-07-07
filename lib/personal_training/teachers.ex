@@ -25,6 +25,14 @@ defmodule PersonalTraining.Teachers do
     Repo.all(from t in Teacher, select: {t.name, t.id})
   end
 
+  def search_teacher(filter) do
+    field = "%#{filter}%"
+
+    from(t in Teacher)
+    |> where([t], ilike(t.name, ^field))
+    |> Repo.all()
+  end
+
   @doc """
   Gets a single teacher.
 
