@@ -10,19 +10,24 @@ defmodule PersonalTrainingWeb.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json", "xml"]
   end
 
   scope "/", PersonalTrainingWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/teacher/search", TeacherController, :search
+    resources "/teacher", TeacherController
+    get "/member/search", MemberController, :search
+    resources "/member", MemberController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PersonalTrainingWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", PersonalTrainingWeb.Api, as: :api do
+    pipe_through :api
+
+    resources "/teacher", TeacherController, except: [:new, :edit]
+  end
 
   # Enables LiveDashboard only for development
   #

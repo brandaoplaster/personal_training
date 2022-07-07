@@ -1,0 +1,15 @@
+  <nav>
+    <div class="nav-wrapper black">
+      <%= link "Persoanl Training", to: Routes.teacher_path(@conn, :index), class: "brand-logo" %>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <%= render PersonalTrainingWeb.SharedView, "_menu.html", assigns %>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <%= render PersonalTrainingWeb.SharedView, "_menu.html", assigns %>
+  </ul>
