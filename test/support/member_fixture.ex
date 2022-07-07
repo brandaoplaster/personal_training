@@ -3,8 +3,7 @@ defmodule PersonalTraining.MemberFixture do
 
   def valid_attrs,
     do: %{
-      "avatar_url" =>
-        "https://apler.org.br/wp-content/uploads/2015/11/personal.jpg",
+      "avatar_url" => "https://apler.org.br/wp-content/uploads/2015/11/personal.jpg",
       "birth_date" => "1991-03-10",
       "blood" => "AB-",
       "email" => "teste@teste",
@@ -16,8 +15,7 @@ defmodule PersonalTraining.MemberFixture do
 
   def update_attrs,
     do: %{
-      "avatar_url" =>
-        "https://apler.org.br/wp-content/uploads/2015/11/personal.jpg",
+      "avatar_url" => "https://apler.org.br/wp-content/uploads/2015/11/personal.jpg",
       "birth_date" => "1991-03-10",
       "blood" => "AB-",
       "email" => "update@teste",
